@@ -1,14 +1,14 @@
 import express, { json } from "express";
 import cors from "cors";
 
-import authRoutes from "./routes/authRoutes";
-import employeeRoutes from "./routes/employeeRoutes";
-import taskRoutes from "./routes/taskRoutes";
-import departmentRoutes from "./routes/departmentRoutes";
-import analyticsRoutes from "./routes/analyticsRoutes";
-import activityRoutes from "./routes/activityRoutes";
-import errorHandler from "./middleware/errorHandler";
-import AppError from "./utils/AppError";
+import authRoutes from "./routes/authRoutes.js";
+import employeeRoutes from "./routes/employeeRoutes.js";
+import taskRoutes from "./routes/taskRoutes.js";
+import departmentRoutes from "./routes/departmentRoutes.js";
+import analyticsRoutes from "./routes/analyticsRoutes.js";
+import activityRoutes from "./routes/activityRoutes.js";
+import errorHandler from "./middleware/errorHandler.js";
+import AppError from "./utils/AppError.js";
 
 const app = express();
 
@@ -25,7 +25,7 @@ app.use(
   cors({
     origin: process.env.CLIENT_URL?.split(",") || "*",
     credentials: true,
-  })
+  }),
 );
 app.use(json({ limit: "1mb" }));
 

@@ -1,12 +1,12 @@
 require("dotenv").config();
 
-import connectDB from "./config/db";
-import { deleteMany, create } from "./models/User";
-import { deleteMany as _deleteMany, insertMany } from "./models/Department";
-import { deleteMany as __deleteMany, insertMany as _insertMany } from "./models/Employee";
-import { deleteMany as ___deleteMany, insertMany as __insertMany } from "./models/task";
-import { deleteMany as ____deleteMany } from "./models/ActivityLog";
-import { hashPassword } from "./utils/password";
+import connectDB from "./config/db.js";
+import { deleteMany, create } from "./models/User.js";
+import { deleteMany as _deleteMany, insertMany } from "./models/Department.js";
+import { deleteMany as __deleteMany, insertMany as _insertMany } from "./models/Employee.js";
+import { deleteMany as ___deleteMany, insertMany as __insertMany } from "./models/task.js";
+import { deleteMany as ____deleteMany } from "./models/ActivityLog.js";
+import { hashPassword } from "./utils/password.js";
 
 const departments = [
   { name: "Billing", code: "BIL", description: "Invoice processing and financial operations" },
