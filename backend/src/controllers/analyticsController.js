@@ -1,7 +1,7 @@
-const Task = require("../models/task.js").default;
-const Employee = require("../models/Employee.js").default;
-const Department = require("../models/Department.js").default;
-const asyncHandler = require("../utils/asyncHandler.js");
+import Task from "../models/task.js";
+import Employee from "../models/Employee.js";
+import Department from "../models/Department.js";
+import asyncHandler from "../utils/asyncHandler.js";
 
 const getOverview = asyncHandler(async (req, res) => {
   const employeeFilter =
@@ -101,4 +101,4 @@ const getOverview = asyncHandler(async (req, res) => {
   });
 });
 
-module.exports = { getOverview };
+export { getOverview };

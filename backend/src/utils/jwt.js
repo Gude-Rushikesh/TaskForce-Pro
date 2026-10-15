@@ -1,5 +1,5 @@
 import { createHmac } from "crypto";
-import AppError from "./AppError";
+import AppError from "./AppError.js";
 
 function base64Url(input) {
   return Buffer.from(input)

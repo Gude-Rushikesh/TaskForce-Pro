@@ -1,5 +1,5 @@
-const ActivityLog = require("../models/ActivityLog.js").default;
-const asyncHandler = require("../utils/asyncHandler.js");
+import ActivityLog from "../models/ActivityLog.js";
+import asyncHandler from "../utils/asyncHandler.js";
 
 const listActivity = asyncHandler(async (_req, res) => {
   const items = await ActivityLog.find()
@@ -10,4 +10,4 @@ const listActivity = asyncHandler(async (_req, res) => {
   res.json({ items });
 });
 
-module.exports = { listActivity };
+export { listActivity };

@@ -1,9 +1,11 @@
-const User = require("../models/User.js").default;
-const AppError = require("../utils/AppError.js");
-const asyncHandler = require("../utils/asyncHandler.js");
-const { verifyToken } = require("../utils/jwt.js");
+import User from "../models/User.js";
+import AppError from "../utils/AppError.js";
+import asyncHandler from "../utils/asyncHandler.js";
+import jwt from "../utils/jwt.js";
 
-const protect = asyncHandler(async (req, _res, next) => {
+const { verifyToken } = jwt;
+
+export const protect = asyncHandler(async (req, _res, next) => {
   const authHeader = req.headers.authorization || "";
   const token = authHeader.startsWith("Bearer ") ? authHeader.slice(7) : null;
 
@@ -22,7 +24,7 @@ const protect = asyncHandler(async (req, _res, next) => {
   next();
 });
 
-const authorize =
+export const authorize =
   (...roles) =>
   (req, _res, next) => {
     if (!roles.includes(req.user.role)) {
@@ -34,5 +36,3 @@ const authorize =
 
     next();
   };
-
-module.exports = { protect, authorize };

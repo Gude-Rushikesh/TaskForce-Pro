@@ -1,4 +1,4 @@
-require("dotenv").config();
+import "dotenv/config";
 
 import connectDB from "./config/db.js";
 import { deleteMany, create } from "./models/User.js";

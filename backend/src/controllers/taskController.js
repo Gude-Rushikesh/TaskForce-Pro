@@ -1,9 +1,9 @@
-const Task = require("../models/task.js").default;
-const Employee = require("../models/Employee.js").default;
-const Department = require("../models/Department.js").default;
-const AppError = require("../utils/AppError.js");
-const asyncHandler = require("../utils/asyncHandler.js");
-const logActivity = require("../utils/activity.js");
+import Task from "../models/task.js";
+import Employee from "../models/Employee.js";
+import Department from "../models/Department.js";
+import AppError from "../utils/AppError.js";
+import asyncHandler from "../utils/asyncHandler.js";
+import logActivity from "../utils/activity.js";
 
 function taskPopulation(query) {
   return query
@@ -166,11 +166,4 @@ const deleteTask = asyncHandler(async (req, res) => {
   res.status(204).send();
 });
 
-module.exports = {
-  listTasks,
-  getTask,
-  createTask,
-  updateTask,
-  addComment,
-  deleteTask,
-};
+export { listTasks, getTask, createTask, updateTask, addComment, deleteTask };

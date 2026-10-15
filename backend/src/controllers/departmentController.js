@@ -1,7 +1,7 @@
-const Department = require("../models/Department.js").default;
-const asyncHandler = require("../utils/asyncHandler.js");
-const AppError = require("../utils/AppError.js");
-const logActivity = require("../utils/activity.js");
+import Department from "../models/Department.js";
+import asyncHandler from "../utils/asyncHandler.js";
+import AppError from "../utils/AppError.js";
+import logActivity from "../utils/activity.js";
 
 const listDepartments = asyncHandler(async (_req, res) => {
   const departments = await Department.find().sort({ name: 1 });
@@ -34,4 +34,4 @@ const updateDepartment = asyncHandler(async (req, res) => {
   res.json(department);
 });
 
-module.exports = { listDepartments, createDepartment, updateDepartment };
+export { listDepartments, createDepartment, updateDepartment };

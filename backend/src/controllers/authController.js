@@ -1,10 +1,13 @@
-const User = require("../models/User.js").default;
-const Employee = require("../models/Employee.js").default;
-const AppError = require("../utils/AppError.js");
-const asyncHandler = require("../utils/asyncHandler.js");
-const { hashPassword, verifyPassword } = require("../utils/password.js").default;
-const { signToken } = require("../utils/jwt.js");
-const logActivity = require("../utils/activity.js");
+import User from "../models/User.js";
+import Employee from "../models/Employee.js";
+import AppError from "../utils/AppError.js";
+import asyncHandler from "../utils/asyncHandler.js";
+import passwordUtils from "../utils/password.js";
+import jwt from "../utils/jwt.js";
+import logActivity from "../utils/activity.js";
+
+const { hashPassword, verifyPassword } = passwordUtils;
+const { signToken } = jwt;
 
 function userResponse(user) {
   return {
@@ -79,4 +82,4 @@ const me = asyncHandler(async (req, res) => {
   res.json({ user: userResponse(req.user) });
 });
 
-module.exports = { register, login, me };
+export { register, login, me };
