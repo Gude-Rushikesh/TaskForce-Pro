@@ -1,4 +1,4 @@
-import { create } from "../models/ActivityLog";
+import { create } from "../models/ActivityLog.js";
 
 async function logActivity({ actor, action, entityType, entityId, metadata = {} }) {
   await create({

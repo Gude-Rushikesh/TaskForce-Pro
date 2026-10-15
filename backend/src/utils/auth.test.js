@@ -1,8 +1,8 @@
 import test from "node:test";
 import { equal } from "node:assert/strict";
 
-import { hashPassword, verifyPassword } from "./password";
-import { signToken, verifyToken } from "./jwt";
+import { hashPassword, verifyPassword } from "./password.js";
+import { signToken, verifyToken } from "./jwt.js";
 
 test("password hashing verifies the original password only", () => {
   const hash = hashPassword("SecurePass123");

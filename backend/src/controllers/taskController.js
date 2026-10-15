@@ -1,9 +1,9 @@
-const Task = require("../models/task").default;
-const Employee = require("../models/Employee").default;
-const Department = require("../models/Department").default;
-const AppError = require("../utils/AppError");
-const asyncHandler = require("../utils/asyncHandler");
-const logActivity = require("../utils/activity");
+const Task = require("../models/task.js").default;
+const Employee = require("../models/Employee.js").default;
+const Department = require("../models/Department.js").default;
+const AppError = require("../utils/AppError.js");
+const asyncHandler = require("../utils/asyncHandler.js");
+const logActivity = require("../utils/activity.js");
 
 function taskPopulation(query) {
   return query

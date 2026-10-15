@@ -1,5 +1,5 @@
-const ActivityLog = require("../models/ActivityLog").default;
-const asyncHandler = require("../utils/asyncHandler");
+const ActivityLog = require("../models/ActivityLog.js").default;
+const asyncHandler = require("../utils/asyncHandler.js");
 
 const listActivity = asyncHandler(async (_req, res) => {
   const items = await ActivityLog.find()

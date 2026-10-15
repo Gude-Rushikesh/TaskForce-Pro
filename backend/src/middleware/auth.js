@@ -1,7 +1,7 @@
-const User = require("../models/User").default;
-const AppError = require("../utils/AppError");
-const asyncHandler = require("../utils/asyncHandler");
-const { verifyToken } = require("../utils/jwt");
+const User = require("../models/User.js").default;
+const AppError = require("../utils/AppError.js");
+const asyncHandler = require("../utils/asyncHandler.js");
+const { verifyToken } = require("../utils/jwt.js");
 
 const protect = asyncHandler(async (req, _res, next) => {
   const authHeader = req.headers.authorization || "";

@@ -1,10 +1,10 @@
-const User = require("../models/User").default;
-const Employee = require("../models/Employee").default;
-const AppError = require("../utils/AppError");
-const asyncHandler = require("../utils/asyncHandler");
-const { hashPassword, verifyPassword } = require("../utils/password").default;
-const { signToken } = require("../utils/jwt");
-const logActivity = require("../utils/activity");
+const User = require("../models/User.js").default;
+const Employee = require("../models/Employee.js").default;
+const AppError = require("../utils/AppError.js");
+const asyncHandler = require("../utils/asyncHandler.js");
+const { hashPassword, verifyPassword } = require("../utils/password.js").default;
+const { signToken } = require("../utils/jwt.js");
+const logActivity = require("../utils/activity.js");
 
 function userResponse(user) {
   return {

@@ -1,7 +1,7 @@
-const Task = require("../models/task").default;
-const Employee = require("../models/Employee").default;
-const Department = require("../models/Department").default;
-const asyncHandler = require("../utils/asyncHandler");
+const Task = require("../models/task.js").default;
+const Employee = require("../models/Employee.js").default;
+const Department = require("../models/Department.js").default;
+const asyncHandler = require("../utils/asyncHandler.js");
 
 const getOverview = asyncHandler(async (req, res) => {
   const employeeFilter =
